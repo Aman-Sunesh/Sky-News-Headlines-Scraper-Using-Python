@@ -69,9 +69,6 @@ python python_web_scraping.py
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your improvements or additional features.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 - [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 - [Requests Library Documentation](https://docs.python-requests.org/en/latest/)
