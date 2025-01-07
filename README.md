@@ -38,7 +38,7 @@ python python_web_scraping.py
 ### Scrape Headlines
 - **Target Website**: Sky News (`https://news.sky.com/`)
 - **Extracted Data**: News headlines along with the timestamp of when they were scraped.
-- **Output**: Saves the scraped headlines to a CSV file named `headlines.csv`.
+- **Output**: Appends the scraped headlines to a CSV file named `headlines.csv`. If the file does not exist, it creates a new one.
 
 ### CSV File Structure
 - **Headline**: The text of the news headline.
@@ -46,7 +46,8 @@ python python_web_scraping.py
 
 ## Important Notes
 - Ensure that the Sky News website's structure has not changed. If the HTML structure changes, you may need to update the class names or tags used in the script.
-- The script creates or overwrites the `headlines.csv` file in the same directory as the script. Ensure you have write permissions for this directory.
+- The script appends to the `headlines.csv` file if it exists, or creates a new one in the same directory as the script. Ensure you have write permissions for this directory.
+- Running the script multiple times will accumulate headlines in the `headlines.csv` file without duplicating headers.
 
 ## Troubleshooting
 
