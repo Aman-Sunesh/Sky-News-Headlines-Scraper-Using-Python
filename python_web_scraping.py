@@ -14,6 +14,9 @@ csv_file = 'headlines.csv'
 # Define the headers for the CSV file
 csv_headers = ['Headline', 'Scraping Time']
 
+# Check if the CSV file exists
+file_exists = os.path.isfile(csv_file)
+
 
 
 try:
@@ -26,11 +29,13 @@ try:
 
     counter = 1
 
-    # Open the CSV file in write mode
-    with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
+    # Open the CSV file in append mode
+    with open(csv_file, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
 
-        writer.writerow(csv_headers)
+        # Write headers only if the file does not exist
+        if not file_exists:
+            writer.writerow(csv_headers)
 
         # Extract headlines
         for headline in soup.find_all("a", class_= "ui-story-headline"):
