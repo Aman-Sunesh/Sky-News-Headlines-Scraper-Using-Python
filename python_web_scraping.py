@@ -26,17 +26,17 @@ try:
 
     counter = 1
 
-    # Open the CSV file in append mode
+    # Open the CSV file in write mode
     with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
 
         writer.writerow(csv_headers)
 
-        # Extract headlines, keeping only those with the keep_class
+        # Extract headlines
         for headline in soup.find_all("a", class_= "ui-story-headline"):
             if headline.text.strip():
-                headline_text = f"{counter}. {headline.text.strip()}\n"  # Print the numbered stripped text of the headline
-                counter += 1  # Increment the counter for the next headline
+                headline_text = f"{counter}. {headline.text.strip()}\n"  
+                counter += 1
 
                 # Get the current time for the scraping timestamp
                 scraping_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
